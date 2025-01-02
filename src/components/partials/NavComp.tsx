@@ -1,4 +1,5 @@
 import React from "react";
+import "./partials.scss";
 import { NavLink } from "react-router-dom";
 
 interface Props {

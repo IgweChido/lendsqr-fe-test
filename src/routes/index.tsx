@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import Layout from "../components/partials/Layout";
+import ProtectedLayout from "../components/partials/ProtectedLayout";
 
 const Loadable = (Component: React.ComponentType) => (props: any) => {
   return (
@@ -16,8 +17,22 @@ const Router = () => {
       element: <Layout />,
       children: [
         {
-          element: <Home />,
-          index: true,
+          element: <ProtectedLayout />,
+          children: [
+            {
+              // path:"",
+              element: <Dashboard />,
+              index: true,
+            },
+            {
+              path: "user-details",
+              element: <UserDetails />,
+            },
+          ],
+        },
+        {
+          path: "login",
+          element: <Login />,
         },
       ],
     },
@@ -25,4 +40,8 @@ const Router = () => {
 };
 
 export default Router;
-const Home = Loadable(lazy(() => import("../pages/Home")));
+const Dashboard = Loadable(lazy(() => import("../pages/dashboard/Dashboard")));
+const Login = Loadable(lazy(() => import("../pages/login/Login")));
+const UserDetails = Loadable(
+  lazy(() => import("../pages/userDetails/UserDetails"))
+);

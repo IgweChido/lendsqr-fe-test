@@ -1,15 +1,26 @@
+$primary-color: #39cdcc;
+$secondary-color: #545f7d;
+$blacklist-color: #e4033b;
+$success-color: #39cd62;
+$pending-color: #e9b200;
+$text-color: #213f7d;
+$background-color: #ffffff;
+$background-color-two: #fbfbfb;
+$border-color-active: #545f7d;
+$border-color: #545f7d26;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  // Hide scrollbar for IE, Edge, and Firefox
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, and Opera
+  }
 }
