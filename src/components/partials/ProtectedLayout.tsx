@@ -8,11 +8,11 @@ import SideNav from "./SideNav";
 
 const ProtectedLayout = () => {
   return (
-    <div>
+    <div className="p__layout">
       <Header />
-      <div>
+      <div className="pl__body">
         <SideNav />
-        <div>
+        <div className="pl__outlet">
           <Outlet />
         </div>
       </div>

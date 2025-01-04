@@ -1,0 +1,145 @@
+@import "../../App.scss";
+
+.userp__comp {
+  border-radius: 4px;
+
+  border: 1px solid #213f7d0f;
+  box-shadow: 3px 5px 20px 0px #0000000a;
+  padding: 30px 30px 0px 30px;
+  background-color: white;
+
+  .userp__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    .userp__top__left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-right: 30px;
+
+      .utl {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .utl__name {
+          font-size: 22px;
+          font-weight: 500;
+          color: $text-color;
+        }
+
+        .utl__code {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .userp__top__middle {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .utm__p {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .utm__stars {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+
+    .userp__top__right {
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .utr__p {
+        font-size: 22px;
+        font-weight: 500;
+        color: $text-color;
+      }
+
+      .utr__num {
+        font-size: 12px;
+        font-weight: 400;
+        color: $text-color;
+      }
+    }
+  }
+
+  .user__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    .user__bottom__nav {
+      padding: 0px 25px 10px;
+      font-size: 16px;
+      font-weight: 400;
+      cursor: pointer;
+      color: black;
+
+      &--active {
+        cursor: pointer;
+        color: $primary-color;
+        padding: 0px 25px 10px;
+        font-size: 16px;
+        font-weight: 400;
+        // border: 0px 0px 2px 0px;
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+}
+
+.userd__background {
+  padding: 30px 0px;
+  border-bottom: 1px solid $border-color;
+
+  .ub__header {
+    font-size: 16px;
+    color: $text-color;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  .ub__children {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+
+    &--grid {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      align-items: center;
+      gap: 30px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.userd__comp {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .udc__label {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .udc__details {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

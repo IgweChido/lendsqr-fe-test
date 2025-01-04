@@ -1,4 +1,249 @@
 @import "../../App.scss";
-.testing {
-  color: $primary-color;
+// header
+.header {
+  // height: 100px;
+  padding: 20px 0px;
+  box-shadow: 3px 0px 20px 0px #0000000a;
+
+  // border: 1px solid brown;
+  .h__comp {
+    // border: 1px solid blue;
+    display: flex;
+    align-items: center;
+
+    .hc__left {
+      // border: 1px solid green;
+      min-width: 283px;
+      padding: 0px 30px;
+
+      .hcl__logo {
+        // border: 1px solid red;
+        width: 144px;
+        height: 30px;
+      }
+    }
+
+    .hc__right {
+      // border: 1px solid yellow;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0px 60px;
+
+      .hcr__left {
+        // border: 1px solid red;
+        width: 400px;
+      }
+
+      .hcr__right {
+        display: flex;
+        align-items: center;
+        // gap: 10px;
+
+        .hcrr__p {
+          // border: 1px solid blue;
+          margin-right: 47px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .hcrr__img {
+          // border: 1px solid green;
+          margin-right: 30px;
+          cursor: pointer;
+        }
+
+        .hcrr__profile {
+          // border: 1px solid blue;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .hcrrp__flex {
+            // border: 1px solid red;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+// sidenav
+.sidenav {
+  // border: 1px solid green;
+  // width: 283px;
+  position: relative;
+  min-width: 283px;
+  height: calc(100vh - 100px);
+
+  font-size: 14px;
+  overflow-y: auto;
+  box-shadow: 0px 5px 20px 0px #0000000a;
+
+  .sn__group {
+    position: relative;
+    padding: 40px 0 110px;
+    // border: 1px solid red;
+    .s__firstnav {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .s__logout {
+      border-top: 1px solid $border-color;
+      padding-top: 10px;
+      // margin-top: 30px;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      .sl__p {
+        padding-left: 30px;
+        font-size: 12px;
+        margin-top: 30px;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+// protected layout
+
+.p__layout {
+  // border: 1px solid blue;
+  height: 100vh;
+  // overflow-y: auto;
+
+  .pl__body {
+    display: flex;
+    // border: 1px solid yellow;
+  }
+
+  .pl__outlet {
+    width: 100%;
+    height: calc(100vh - 88px);
+    overflow-y: auto;
+    padding: 60px;
+    background-color: $background-color-two;
+    color: $secondary-color;
+    // border: 1px solid brown;
+  }
+}
+
+// nav comp
+.nav {
+  // color: $secondary-color;
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  // border: 1px solid red !important;
+  .nav__comp {
+    position: relative;
+    // border: 1px solid green;
+    padding: 10px 30px;
+    width: 100%;
+
+    .nc__div {
+      position: absolute;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background-color: $primary-color;
+    }
+
+    .nc__flex {
+      // border: 1px solid red;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nc__icon {
+      // border: 1px solid black;
+    }
+    .nc__p {
+      // border: 1px solid green;
+      color: $secondary-color !important;
+      font-weight: 400;
+      text-decoration: none !important;
+    }
+
+    .nc__drop {
+      width: 14px;
+      height: 14px;
+      // border: 1px solid green;
+    }
+
+    // Active state styles
+    &--active {
+      background-color: #39cdcc0f;
+      position: relative;
+      // border: 1px solid green;
+      padding: 10px 30px;
+      width: 100%;
+      // opacity: 6%;
+      .nc__div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background-color: $primary-color;
+      }
+
+      .nc__flex {
+        // border: 1px solid red;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nc__icon {
+      }
+      .nc__p {
+        // border: 1px solid green;
+        color: $text-color;
+        text-decoration: none;
+      }
+
+      .nc__drop {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &:hover {
+      background-color: #39cdcc0f;
+
+      .nc__p {
+        color: $text-color;
+      }
+    }
+  }
+}
+
+// nav category
+.nav__category {
+  // border: 1px solid green;
+  margin-bottom: 30px;
+  .nc__header {
+    // font-family: Work Sans;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0 30px;
+    margin-bottom: 10px;
+    color: $secondary-color;
+  }
+  .nc__map {
+    // border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
