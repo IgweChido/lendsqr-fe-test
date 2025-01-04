@@ -1,5 +1,5 @@
 const config = {
-  baseURL: "https://run.mocky.io/v3/",
+  baseURL: "https://run.mocky.io/v3",
   headers: {
     Accept: "application/json",
   },
