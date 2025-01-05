@@ -1,1 +1,15 @@
 @import "../../App.scss";
+
+.dashboard__p {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  color: $text-color;
+}
+.dashboard__analytics {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  // justify-content: spa;
+  gap: 26px;
+}
