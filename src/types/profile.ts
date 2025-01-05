@@ -37,7 +37,7 @@ interface Guarantor {
   relationship: string;
 }
 
-interface UserProfile {
+export interface UserProfile {
   personalInformation: PersonalInformation;
   educationAndEmployment: EducationAndEmployment;
   socials: Socials;

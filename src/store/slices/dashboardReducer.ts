@@ -1,24 +1,25 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getDashboardAnalytics } from "../../services/dashboard";
+import { DashboardSummary } from "../../types/dashboard";
 
 interface StateType {
-  data: any;
+  data: DashboardSummary | {};
   loading: boolean;
   error: string | undefined;
 }
 
 const initialState: StateType = {
-  data: [],
+  data: {},
   loading: true,
   error: "",
 };
 
 export const fetchDashboardAnalytics = createAsyncThunk(
   "data/fetchDashboardAnalytics",
-  // payload any for now
-  async (payload: any) => {
+
+  async () => {
     try {
-      const response = await getDashboardAnalytics(payload);
+      const response = await getDashboardAnalytics();
 
       const data = await response;
 

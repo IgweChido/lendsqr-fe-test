@@ -8,7 +8,7 @@ import nStar from "../../assets/icons/nStar.svg";
 
 const UserProfileComp = () => {
   const [nav, setNav] = useState<string>("general");
-  console.log("nav", nav);
+  // console.log("nav", nav);
   return (
     <div className="userp__comp">
       {/* top */}
@@ -65,8 +65,8 @@ interface BottomNav {
 }
 
 const BottomNav = ({ label, navs, keys, setNav }: BottomNav) => {
-  console.log("key", keys);
-  console.log("nav", navs);
+  // console.log("key", keys);
+  // console.log("nav", navs);
   return (
     <div
       className={

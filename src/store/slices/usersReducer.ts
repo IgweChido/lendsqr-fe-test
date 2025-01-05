@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { getUsers } from "../../services/users";
+import { Users } from "../../types/users";
 
 interface StateType {
-  data: any;
+  data: Users[];
   loading: boolean;
   error: string | undefined;
 }
@@ -16,10 +17,10 @@ const initialState: StateType = {
 
 export const fetchUsers = createAsyncThunk(
   "data/fetchUsers",
-  // payload any for now
-  async (payload: any) => {
+
+  async () => {
     try {
-      const response = await getUsers(payload);
+      const response = await getUsers();
 
       const data = await response;
 
@@ -39,7 +40,7 @@ const usersSlice = createSlice({
     });
     builder.addCase(fetchUsers.fulfilled, (state, action) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = action.payload.data;
       state.error = "";
     });
     builder.addCase(fetchUsers.rejected, (state, action) => {

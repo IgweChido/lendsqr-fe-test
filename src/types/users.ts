@@ -1,6 +1,6 @@
 type UserStatus = "inactive" | "pending" | "blacklisted" | "active";
 
-interface Users {
+export interface Users {
   username: string;
   email: string;
   organization: string;

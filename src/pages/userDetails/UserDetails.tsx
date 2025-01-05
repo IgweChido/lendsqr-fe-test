@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./userDetails.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/slices";
+import { AppDispatch } from "../../store/store";
+import { fetchUserProfile } from "../../store/slices/profileReducer";
 
 // components
 import UserProfileComp from "../../components/userDetails/UserProfileComp";
@@ -7,7 +11,16 @@ import UserDetailsBackground from "../../components/userDetails/UserDetailsBackg
 import UserDetailsComp from "../../components/userDetails/UserDetailsComp";
 import BackButton from "../../components/button/BackButton";
 import ButtonComp from "../../components/button/ButtonComp";
+
 const UserDetails = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const profile = useSelector((state: RootState) => state.profile.data);
+
+  useEffect(() => {
+    dispatch(fetchUserProfile());
+  }, [dispatch]);
+
+  console.log("profile", profile);
   return (
     <div>
       {/* back button */}

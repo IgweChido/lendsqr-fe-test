@@ -1,24 +1,25 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getUserProfile } from "../../services/profile";
+import { UserProfile } from "../../types/profile";
 
 interface StateType {
-  data: any;
+  data: UserProfile | {};
   loading: boolean;
   error: string | undefined;
 }
 
 const initialState: StateType = {
-  data: [],
+  data: {},
   loading: true,
   error: "",
 };
 
 export const fetchUserProfile = createAsyncThunk(
   "data/fetchUserProfile",
-  // payload any for now
-  async (payload: any) => {
+
+  async () => {
     try {
-      const response = await getUserProfile(payload);
+      const response = await getUserProfile();
 
       const data = await response;
 
@@ -38,7 +39,7 @@ const profileSlice = createSlice({
     });
     builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = action.payload.data;
       state.error = "";
     });
     builder.addCase(fetchUserProfile.rejected, (state, action) => {
