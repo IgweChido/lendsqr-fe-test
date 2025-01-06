@@ -1,5 +1,11 @@
 @import "../../App.scss";
 
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > input.ant-input,
+:where(.css-dev-only-do-not-override-161f05s).ant-input-affix-wrapper
+  > textarea.ant-input {
+  color: $secondary-color !important;
+}
 .login {
   // border: 5px solid green;
   display: grid;
@@ -49,9 +55,11 @@
     align-items: center;
     justify-content: center;
     .form {
+      font-family: "Avenir-Next", sans-serif !important;
       // border: 1px solid blue;
       width: 100%;
       max-width: 447px;
+
       // margin: auto;
       .welcome {
         font-weight: 700;

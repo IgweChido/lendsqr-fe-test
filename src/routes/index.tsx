@@ -1,11 +1,12 @@
 import React, { lazy, Suspense } from "react";
+import "./routes.scss";
 import { useRoutes } from "react-router-dom";
 import Layout from "../components/partials/Layout";
 import ProtectedLayout from "../components/partials/ProtectedLayout";
 
 const Loadable = (Component: React.ComponentType) => (props: any) => {
   return (
-    <Suspense fallback={<div className="">...loading</div>}>
+    <Suspense fallback={<div className="loading">...loading</div>}>
       <Component {...props} />
     </Suspense>
   );

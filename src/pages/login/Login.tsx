@@ -1,5 +1,7 @@
 import React from "react";
 import "./login.scss";
+import { Input } from "antd";
+import { useNavigate } from "react-router-dom";
 
 // images
 import pablo from "../../assets/images/login.svg";
@@ -7,8 +9,9 @@ import pablo from "../../assets/images/login.svg";
 // components
 import LogoComp from "../../components/logo/LogoComp";
 import ButtonComp from "../../components/button/ButtonComp";
-import { Input } from "antd";
+
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="login">
       {/* left - image */}
@@ -47,7 +50,9 @@ const Login = () => {
             borderColor="transparent"
             py="14px"
             color="white"
-            handleClick={() => {}}
+            handleClick={() => {
+              navigate("/");
+            }}
           />
         </div>
       </div>
