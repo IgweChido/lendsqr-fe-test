@@ -1,5 +1,5 @@
 import getData from "../requests/getData";
 export const getUsers = async () => {
-  const respData = await getData(`/1fa320a0-9b02-424b-8a7c-0a849e26eaa3`);
+  const respData = await getData(`/79444f63-379e-4c28-98f2-3ee25d2e29c2`);
   return respData;
 };

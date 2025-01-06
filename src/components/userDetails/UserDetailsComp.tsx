@@ -4,7 +4,7 @@ import "./userDetails.scss";
 
 interface Props {
   label: string;
-  details: string;
+  details: string | undefined;
 }
 
 const UserDetailsComp = ({ label, details }: Props) => {

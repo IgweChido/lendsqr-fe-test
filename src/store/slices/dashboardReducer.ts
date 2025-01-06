@@ -3,13 +3,13 @@ import { getDashboardAnalytics } from "../../services/dashboard";
 import { DashboardSummary } from "../../types/dashboard";
 
 interface StateType {
-  data: DashboardSummary | {};
+  data: DashboardSummary | null;
   loading: boolean;
   error: string | undefined;
 }
 
 const initialState: StateType = {
-  data: {},
+  data: null,
   loading: true,
   error: "",
 };
@@ -39,12 +39,12 @@ const dashboardSlice = createSlice({
     });
     builder.addCase(fetchDashboardAnalytics.fulfilled, (state, action) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data = action.payload.data;
       state.error = "";
     });
     builder.addCase(fetchDashboardAnalytics.rejected, (state, action) => {
       state.loading = true;
-      state.data = [];
+      state.data = null;
       state.error = action.error.message;
     });
   },

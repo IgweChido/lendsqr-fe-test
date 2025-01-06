@@ -4,7 +4,7 @@ import "./dashboard.scss";
 interface Props {
   image: string;
   label: string;
-  stats: string;
+  stats: string | null | undefined;
   color: string;
 }
 

@@ -5,8 +5,13 @@ import "./userDetails.scss";
 import userP from "../../assets/icons/userP.svg";
 import aStar from "../../assets/icons/aStar.svg";
 import nStar from "../../assets/icons/nStar.svg";
+import { UserProfile } from "../../types/profile";
 
-const UserProfileComp = () => {
+interface Props {
+  data: UserProfile | null;
+}
+
+const UserProfileComp = ({ data }: Props) => {
   const [nav, setNav] = useState<string>("general");
   // console.log("nav", nav);
   return (
@@ -16,8 +21,8 @@ const UserProfileComp = () => {
         <div className="userp__top__left">
           <img src={userP} alt="" className="" />
           <div className="utl">
-            <p className="utl__name">Grace Effiom</p>
-            <p className="utl__code">LSQFf587g90</p>
+            <p className="utl__name">{data?.personal_information.full_name}</p>
+            <p className="utl__code">{data?.personal_information.bvn}</p>
           </div>
         </div>
         <div className="userp__top__middle">
@@ -29,8 +34,13 @@ const UserProfileComp = () => {
           </div>
         </div>
         <div className="userp__top__right">
-          <p className="utr__p">₦200,000.00</p>
-          <p className="utr__num">9912345678/Providus Bank</p>
+          <p className="utr__p">
+            ₦{data?.education_and_employment.loan_repayment}
+          </p>
+          <p className="utr__num">
+            {data?.bank_information.account_number}/
+            {data?.bank_information.bank_name}
+          </p>
         </div>
       </div>
       {/* bottom */}

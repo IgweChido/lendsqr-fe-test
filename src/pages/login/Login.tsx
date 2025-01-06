@@ -13,13 +13,15 @@ const Login = () => {
     <div className="login">
       {/* left - image */}
       <div className="login__left">
-        {/* logo */}
-        <div className="logo">
-          <LogoComp />
-        </div>
+        <div className="ll__div">
+          {/* logo */}
+          <div className="logo">
+            <LogoComp />
+          </div>
 
-        {/* image */}
-        <img src={pablo} alt="login-image" className="pablo__image" />
+          {/* image */}
+          <img src={pablo} alt="login-image" className="pablo__image" />
+        </div>
       </div>
       {/* right - form */}
       <div className="login__right">

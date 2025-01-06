@@ -126,6 +126,32 @@
       justify-content: space-between;
     }
   }
+  &--last {
+    padding: 30px 0px;
+    // border-bottom: 1px solid $border-color;
+    .ub__header {
+      font-size: 16px;
+      color: $text-color;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .ub__children {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      align-items: center;
+      gap: 30px;
+      justify-content: space-between;
+
+      &--grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        gap: 30px;
+        justify-content: space-between;
+      }
+    }
+  }
 }
 
 .userd__comp {

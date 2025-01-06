@@ -11,13 +11,14 @@ import UserDetailsBackground from "../../components/userDetails/UserDetailsBackg
 import UserDetailsComp from "../../components/userDetails/UserDetailsComp";
 import BackButton from "../../components/button/BackButton";
 import ButtonComp from "../../components/button/ButtonComp";
+import { Guarantor } from "../../types/profile";
 
 const UserDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
   const profile = useSelector((state: RootState) => state.profile.data);
 
   useEffect(() => {
-    dispatch(fetchUserProfile());
+    dispatch(fetchUserProfile("294939d9-5fd4-4d0f-9c91-3b717a9113d9"));
   }, [dispatch]);
 
   console.log("profile", profile);
@@ -54,51 +55,99 @@ const UserDetails = () => {
         </div>
       </div>
 
-      <UserProfileComp />
+      <UserProfileComp data={profile} />
 
       <div className="user__details__info">
         <UserDetailsBackground label="Personal Information">
-          <UserDetailsComp label="FULL NAME" details="Grace Effiom" />
-          <UserDetailsComp label="PHONE NUMBER" details="Grace Effiom" />
-          <UserDetailsComp label="Email Address" details="Grace Effiom" />
-          <UserDetailsComp label="Bvn" details="Grace Effiom" />
-          <UserDetailsComp label="Gender" details="Grace Effiom" />
-          <UserDetailsComp label="Marital status" details="Grace Effiom" />
-          <UserDetailsComp label="Children" details="Grace Effiom" />
-          <UserDetailsComp label="Type of residence" details="Grace Effiom" />
+          <UserDetailsComp
+            label="FULL NAME"
+            details={profile?.personal_information.full_name}
+          />
+          <UserDetailsComp
+            label="PHONE NUMBER"
+            details={profile?.personal_information.phone_number}
+          />
+          <UserDetailsComp
+            label="Email Address"
+            details={profile?.personal_information.email_address}
+          />
+          <UserDetailsComp
+            label="Bvn"
+            details={profile?.personal_information.bvn}
+          />
+          <UserDetailsComp
+            label="Gender"
+            details={profile?.personal_information.gender}
+          />
+          <UserDetailsComp
+            label="Marital status"
+            details={profile?.personal_information.marital_status}
+          />
+          <UserDetailsComp
+            label="Children"
+            details={profile?.personal_information.children}
+          />
+          <UserDetailsComp
+            label="Type of residence"
+            details={profile?.personal_information.type_of_residence}
+          />
         </UserDetailsBackground>
         <UserDetailsBackground label="Education and Employment" grid>
-          <UserDetailsComp label="level of education" details="Grace Effiom" />
-          <UserDetailsComp label="employment status" details="Grace Effiom" />
+          <UserDetailsComp
+            label="level of education"
+            details={profile?.education_and_employment.level_of_education}
+          />
+          <UserDetailsComp
+            label="employment status"
+            details={profile?.education_and_employment.employment_status}
+          />
           <UserDetailsComp
             label="sector of employment"
-            details="Grace Effiom"
+            details={profile?.education_and_employment.sector_of_employment}
           />
           <UserDetailsComp
             label="Duration of employment"
-            details="Grace Effiom"
+            details={profile?.education_and_employment.duration_of_employment}
           />
-          <UserDetailsComp label="office email" details="Grace Effiom" />
-          <UserDetailsComp label="Monthly income" details="Grace Effiom" />
-          <UserDetailsComp label="loan repayment" details="Grace Effiom" />
+          <UserDetailsComp
+            label="office email"
+            details={profile?.education_and_employment.office_email}
+          />
+          <UserDetailsComp
+            label="Monthly income"
+            details={profile?.education_and_employment.monthly_income}
+          />
+          <UserDetailsComp
+            label="loan repayment"
+            details={profile?.education_and_employment.loan_repayment}
+          />
         </UserDetailsBackground>
         <UserDetailsBackground label="Socials">
-          <UserDetailsComp label="Twitter" details="Grace Effiom" />
-          <UserDetailsComp label="Facebook" details="Grace Effiom" />
-          <UserDetailsComp label="Instagram" details="Grace Effiom" />
+          <UserDetailsComp label="Twitter" details={profile?.socials.twitter} />
+          <UserDetailsComp
+            label="Facebook"
+            details={profile?.socials.facebook}
+          />
+          <UserDetailsComp
+            label="Instagram"
+            details={profile?.socials.instagram}
+          />
         </UserDetailsBackground>
-        <UserDetailsBackground label="Guarantor">
-          <UserDetailsComp label="FULL NAME" details="Grace Effiom" />
-          <UserDetailsComp label="PHONE NUMBER" details="Grace Effiom" />
-          <UserDetailsComp label="Email Address" details="Grace Effiom" />
-          <UserDetailsComp label="Relationship" details="Grace Effiom" />
-        </UserDetailsBackground>
-        <UserDetailsBackground label="">
-          <UserDetailsComp label="FULL NAME" details="Grace Effiom" />
-          <UserDetailsComp label="PHONE NUMBER" details="Grace Effiom" />
-          <UserDetailsComp label="Email Address" details="Grace Effiom" />
-          <UserDetailsComp label="Relationship" details="Grace Effiom" />
-        </UserDetailsBackground>
+
+        {profile?.guarantors.map((data: Guarantor, index) => (
+          <UserDetailsBackground
+            last={index == profile?.guarantors.length - 1 ? true : false}
+            label={index > 0 ? `` : `Guarantor`}
+          >
+            <UserDetailsComp label="FULL NAME" details={data.full_name} />
+            <UserDetailsComp label="PHONE NUMBER" details={data.phone_number} />
+            <UserDetailsComp
+              label="Email Address"
+              details={data.email_address}
+            />
+            <UserDetailsComp label="Relationship" details={data.relationship} />
+          </UserDetailsBackground>
+        ))}
       </div>
     </div>
   );

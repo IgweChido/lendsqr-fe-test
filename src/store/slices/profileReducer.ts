@@ -3,13 +3,13 @@ import { getUserProfile } from "../../services/profile";
 import { UserProfile } from "../../types/profile";
 
 interface StateType {
-  data: UserProfile | {};
+  data: UserProfile | null;
   loading: boolean;
   error: string | undefined;
 }
 
 const initialState: StateType = {
-  data: {},
+  data: null,
   loading: true,
   error: "",
 };
@@ -17,9 +17,9 @@ const initialState: StateType = {
 export const fetchUserProfile = createAsyncThunk(
   "data/fetchUserProfile",
 
-  async () => {
+  async (id: string) => {
     try {
-      const response = await getUserProfile();
+      const response = await getUserProfile(id);
 
       const data = await response;
 
@@ -44,7 +44,7 @@ const profileSlice = createSlice({
     });
     builder.addCase(fetchUserProfile.rejected, (state, action) => {
       state.loading = true;
-      state.data = [];
+      state.data = null;
       state.error = action.error.message;
     });
   },

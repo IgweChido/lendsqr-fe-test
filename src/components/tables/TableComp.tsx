@@ -1,46 +1,94 @@
 import React from "react";
-import { Table } from "antd";
+import { Dropdown, Table } from "antd";
 import type { TableColumnsType } from "antd";
 import "./tables.scss";
 
 // images
 import dots from "../../assets/icons/three-dots.svg";
+import eye from "../../assets/icons/drop-one.svg";
+import blacklist from "../../assets/icons/drop-two.svg";
+import activate from "../../assets/icons/drop-three.svg";
+
+// types
+import { Users } from "../../types/users";
 
 // components
 
-interface DataType {
-  key: React.Key;
-  name: string;
-  age: number;
-  address: string;
-}
+interface DataType extends Users {}
+
+const items = [
+  {
+    key: "1",
+    label: (
+      <div className="table__dropdown">
+        <img src={eye} alt=""></img>
+        <p>View Details</p>
+      </div>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <div className="table__dropdown">
+        <img src={blacklist} alt=""></img>
+        <p>Blacklist User</p>
+      </div>
+    ),
+  },
+  {
+    key: "3",
+    label: (
+      <div className="table__dropdown">
+        <img src={activate} alt=""></img>
+        <p>Activate User</p>
+      </div>
+    ),
+  },
+];
+
+const onClick = ({ key }: any) => {
+  if (key === "1") {
+  } else if (key === "2") {
+  } else if (key === "3") {
+  }
+};
 
 const columns: TableColumnsType<DataType> = [
   {
     title: "organization",
     width: 100,
-    dataIndex: "name",
-    key: "name",
+    dataIndex: "organization",
+    key: "organization",
     fixed: "left",
   },
   {
     title: "Username",
     width: 100,
-    dataIndex: "age",
-    key: "age",
+    dataIndex: "username",
+    key: "username",
     fixed: "left",
     sorter: true,
   },
-  { title: "Email", dataIndex: "address", key: "1" },
-  { title: "Phone number", dataIndex: "address", key: "2" },
-  { title: "Date joined", dataIndex: "address", key: "3" },
+  { title: "Email", dataIndex: "email", key: "email" },
+  { title: "Phone number", dataIndex: "phone_number", key: "phone_number" },
+  { title: "Date joined", dataIndex: "date_joined", key: "date_joined" },
   {
     title: "Status",
     dataIndex: "status",
     key: "4",
     render: (status) => (
-      <div className={`status__comp active`}>
-        <p>inactive</p>
+      <div
+        className={
+          status == "active"
+            ? `status__comp active`
+            : status == "pending"
+            ? `status__comp pending`
+            : status == "blacklisted"
+            ? `status__comp blacklisted`
+            : `status__comp inactive`
+        }
+      >
+        <p>{status}</p>
       </div>
     ),
   },
@@ -51,29 +99,24 @@ const columns: TableColumnsType<DataType> = [
     fixed: "right",
     // width: 100,
     render: () => (
-      <div className="table__action">
-        <img src={dots} alt="" />
-      </div>
+      <Dropdown
+        className="cursor cursor-pointer "
+        menu={{ items, onClick }}
+        trigger={["click"]}
+      >
+        <div className="table__action">
+          <img src={dots} alt="" />
+        </div>
+      </Dropdown>
     ),
   },
 ];
 
-const dataSource: DataType[] = [
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-  { key: "1", name: "Olivia", age: 32, address: "New York Park" },
-  { key: "2", name: "Ethan", age: 40, address: "London Park" },
-];
-const TableComp = () => {
+interface Props {
+  data: Users[];
+}
+const TableComp = ({ data }: Props) => {
+  const dataSource: DataType[] = data;
   return (
     <div>
       <Table<DataType>

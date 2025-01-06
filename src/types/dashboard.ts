@@ -1,6 +1,6 @@
 export interface DashboardSummary {
-  totalUsers: number;
-  activeUsers: number;
-  usersWithLoans: number;
-  usersWithSavings: number;
+  total_users: string | null;
+  active_users: string | null;
+  users_with_loans: string | null;
+  users_with_savings: string | null;
 }

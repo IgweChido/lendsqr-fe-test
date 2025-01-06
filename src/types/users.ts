@@ -4,7 +4,7 @@ export interface Users {
   username: string;
   email: string;
   organization: string;
-  phoneNumber: string;
-  dateJoined: string;
+  phone_number: string;
+  date_joined: string;
   status: UserStatus;
 }

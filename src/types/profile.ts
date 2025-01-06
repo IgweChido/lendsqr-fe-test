@@ -1,22 +1,22 @@
-interface PersonalInformation {
-  fullName: string;
-  phoneNumber: string;
-  emailAddress: string;
+interface Personal_Information {
+  full_name: string;
+  phone_number: string;
+  email_address: string;
   bvn: string;
   gender: string;
-  maritalStatus: string;
+  marital_status: string;
   children: string;
-  typeOfResidence: string;
+  type_of_residence: string;
 }
 
-interface EducationAndEmployment {
-  levelOfEducation: string;
-  employmentStatus: string;
-  sectorOfEmployment: string;
-  durationOfEmployment: string;
-  officeEmail: string;
-  monthlyIncome: string;
-  loanRepayment: string;
+interface Education_And_Employment {
+  level_of_education: string;
+  employment_status: string;
+  sector_of_employment: string;
+  duration_of_employment: string;
+  office_email: string;
+  monthly_income: string;
+  loan_repayment: string;
 }
 
 interface Socials {
@@ -25,22 +25,22 @@ interface Socials {
   instagram: string;
 }
 
-interface BankInformation {
-  bankName: string;
-  accountNumber: string;
+interface Bank_Information {
+  bank_name: string;
+  account_number: string;
 }
 
-interface Guarantor {
-  fullName: string;
-  phoneNumber: string;
-  emailAddress: string;
+export interface Guarantor {
+  full_name: string;
+  phone_number: string;
+  email_address: string;
   relationship: string;
 }
 
 export interface UserProfile {
-  personalInformation: PersonalInformation;
-  educationAndEmployment: EducationAndEmployment;
+  personal_information: Personal_Information;
+  education_and_employment: Education_And_Employment;
   socials: Socials;
-  bankInformation: BankInformation;
+  bank_information: Bank_Information;
   guarantors: Guarantor[];
 }

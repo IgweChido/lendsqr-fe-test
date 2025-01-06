@@ -1,5 +1,5 @@
 import getData from "../requests/getData";
 export const getDashboardAnalytics = async () => {
-  const respData = await getData(`/a6a9d401-d097-41c4-bdc8-0f8be4a13535`);
+  const respData = await getData(`/379fe066-66e0-47d6-9cf8-5cc31c756cd8`);
   return respData;
 };

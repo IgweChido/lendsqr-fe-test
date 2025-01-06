@@ -11,28 +11,43 @@
     // border: 1px solid red;
     height: 100%;
     width: 100%;
-    padding: 11.1% 9.24%;
+    padding: 0 9.24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .logo {
-      width: 173px;
-      height: 36px;
-      // border: 1px solid blue;
-      margin-bottom: 15.44%;
-    }
-
-    .pablo__image {
-      border: 1px solid brown;
+    .ll__div {
+      // border: 1px solid red;
       width: 100%;
-      height: 337px;
-      margin: auto;
+      .logo {
+        width: 173px;
+        height: 36px;
+        // border: 1px solid blue;
+        margin-bottom: 140px;
+      }
+
+      .pablo__image {
+        // border: 1px solid brown;
+        width: 100%;
+        // height: 337px;
+        margin: auto;
+      }
+    }
+    @media (max-width: 1024px) {
+      // border: 1px solid red;
+
+      padding: 100px 16px;
     }
   }
 
   .login__right {
     height: 100%;
-    padding: 24% 100px;
+    padding: 0 100px;
     width: 100%;
-    border: 1px solid green;
+    // border: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .form {
       // border: 1px solid blue;
       width: 100%;
@@ -61,6 +76,22 @@
         color: $primary-color;
         margin: 24px 0 30px;
       }
+
+      @media (min-width: 1920px) {
+        max-width: 600px;
+      }
     }
+    @media (max-width: 1024px) {
+      // border: 1px solid red;
+
+      padding: 100px 16px;
+    }
+  }
+  @media (max-width: 1024px) {
+    border: 1px solid green;
+    //   display: grid;
+    // align-items: center;
+    grid-template-columns: 100%;
+    height: auto;
   }
 }
