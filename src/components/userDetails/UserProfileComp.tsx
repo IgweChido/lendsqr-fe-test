@@ -19,7 +19,7 @@ const UserProfileComp = ({ data }: Props) => {
       {/* top */}
       <div className="userp__top">
         <div className="userp__top__left">
-          <img src={userP} alt="" className="" />
+          <img src={userP} alt="" className="utl__img" />
           <div className="utl">
             <p className="utl__name">{data?.personal_information.full_name}</p>
             <p className="utl__code">{data?.personal_information.bvn}</p>
@@ -44,7 +44,7 @@ const UserProfileComp = ({ data }: Props) => {
         </div>
       </div>
       {/* bottom */}
-      <div className="user__bottom">
+      <div className="user__bottom custom-scrollbar">
         {[
           { label: "General Details", key: "general" },
           { label: "Documents", key: "documents" },

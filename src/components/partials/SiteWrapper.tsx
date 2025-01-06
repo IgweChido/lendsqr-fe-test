@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 const SiteWrapper: React.FC<Props> = ({ children }) => {
-  return <div className="">{children}</div>;
+  return <div className="site__wrapper">{children}</div>;
 };
 
 export default SiteWrapper;

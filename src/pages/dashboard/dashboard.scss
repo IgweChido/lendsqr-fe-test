@@ -5,11 +5,14 @@
   font-size: 24px;
   font-weight: 500;
   color: $text-color;
+  // border: 1px solid red;
 }
 .dashboard__analytics {
   margin-bottom: 40px;
   display: flex;
-  align-items: center;
-  // justify-content: spa;
+  // align-items: center;
+  justify-content: space-between;
   gap: 26px;
+  // border: 1px solid blue;
+  overflow-x: auto;
 }

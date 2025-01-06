@@ -30,9 +30,14 @@ import reports from "../../assets/icons/reports.svg";
 
 import NavCategory from "./NavCategory";
 import NavComp from "./NavComp";
-const SideNav = () => {
+
+interface Props {
+  display: boolean;
+  setDisplay: (val: boolean) => void;
+}
+const SideNav = ({ display, setDisplay }: Props) => {
   return (
-    <div className="sidenav">
+    <div className={display ? `sidenav display` : `sidenav`}>
       <div className="sn__group">
         <div className="s__firstnav">
           <NavComp
