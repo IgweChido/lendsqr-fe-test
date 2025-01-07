@@ -1,8 +1,35 @@
-# react_boiler_plate
+# Frontend Assessment Project
 
-React boiler plate to easily setup projects
+## Table of Contents
 
-## Folder structure
+1. Tech Stack
+2. Features
+3. Project Structure
+4. Setup and Installation
+5. Mock API
+6. Testing
+7. Media Responsiveness
+8. Conclusion
+
+## 1. Tech Stack
+
+- **Framework**: React with TypeScript
+- **Styling**: SCSS
+- **Data Storage**: LocalStorage
+- **API Mocking**: Mocky.io
+- **State Management**: Redux Toolkit
+- **UI Library**: Ant Design
+- **Testing**:
+
+## 2. Features
+
+- Pixel-perfect implementation matching the Figma design
+- Fully responsive for mobile and desktop screen sizes
+- 5 mock user records loaded from a mock API
+- User details fetched with Redux Toolkit
+- Unit tests covering positive and negative scenarios
+
+## 3. Project Structure
 
 /src
 ├── /assets
@@ -12,31 +39,47 @@ React boiler plate to easily setup projects
 ├── /utils
 ├── /views/pages
 ├── /routes
-├── index.js
-└── App.js
+├── index.ts
+└── App.ts
 
-### Components
+## 4. Setup and Installation
 
-Component will have all the components which are reuseable anywhere in website. Like - Button - Cards - DropDownBtn - inputs - Modal - Popups - Toast - Tooltip - Text/Heading/Title - Skeleton - Spiner/Loader
+### **_Clone the repository:_**
 
-#### Services
+- git clone https://github.com/IgweChido/lendsqr-fe-test
+- cd lendsqr-fe-test
 
-In Services we put configuration file, like when you are using google firebase then your firebase config file will be in services folder.
+### **_Install dependencies:_**
 
-The "services" folder is often used to contain code related to making \*API requests and managing data from external sources. This folder helps separate the concerns of your application by isolating data fetching and manipulation logic from the components that render the UI.
+- npm install
 
-### Store
+### **_Run the application:_**
 
-"store" folder in a React application typically refers to a directory where you manage your application's state using state management libraries like'
+- npm run dev
 
-### Routes
+### **_Run tests:_**
 
-Router will have all the Routes in website. Where we are going and where we want to go.
+- npm test
 
-### Utils
+## 5. Mock API
 
-Whether or not your project needs a utils folder is up to you, but I think there are usually some global utility functions, like validation and conversion, that could easily be used across multiple sections of the app. If you keep it organized - not just having one helpers.js file that contains thousands of functions - it could be a helpful addition to the organization of your project.
+The mock data includes 5 user records generated using Mocky.io
+The major APIs called where:
 
-### Partials
+- Get Users
+- Get Dashboard Analytics
+- Get User Details
 
-Partials are reusable components or sections of code within a web development context. They allow you to break down your HTML (or other templating language) files into smaller, more manageable pieces. These smaller pieces can then be included or inserted into multiple pages or templates
+## Testing
+
+## Media Responsiveness
+
+Responsive breakpoints for screen sizes:
+
+- **Desktop**: ≥ 1440px
+- **Tablet**: 768px - 1439px
+- **Mobile**: < 768px
+
+## Conclusion
+
+This project demonstrates expertise in building responsive, scalable frontend solutions with modern tools and techniques while adhering to best practices in code quality and testing.
