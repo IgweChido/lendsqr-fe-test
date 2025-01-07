@@ -52,7 +52,7 @@ const SideNav = ({ display, setDisplay }: Props) => {
         <NavCategory
           header="CUSTOMERS"
           navLinks={[
-            { label: "Users", link: "", icon: user, isDrop: false },
+            { label: "Users", link: "/users", icon: user, isDrop: false },
             {
               label: "Guarantors",
               link: "/guarantors",

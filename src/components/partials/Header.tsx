@@ -37,6 +37,11 @@ const Header = ({ setDisplay, display }: Props) => {
             <img src={display ? cancel : ham} alt="" />
           </div>
         </div>
+
+        {/* middle */}
+        <div className="hc__middle">
+          <LogoComp />
+        </div>
         {/* right */}
         <SiteWrapper>
           <div className="hc__right">

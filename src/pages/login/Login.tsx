@@ -51,7 +51,7 @@ const Login = () => {
             py="14px"
             color="white"
             handleClick={() => {
-              navigate("/");
+              navigate("/users");
             }}
           />
         </div>
