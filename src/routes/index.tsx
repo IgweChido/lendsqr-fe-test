@@ -24,14 +24,14 @@ const Loadable = (Component: React.ComponentType) => (props: any) => {
 const Router = () => {
   return useRoutes([
     {
-      path: "/",
+      path: "/users",
       element: <Layout />,
       children: [
         {
           element: <ProtectedLayout />,
           children: [
             {
-              path: "users",
+              // path: "",
               element: (
                 <ProtectedRoute>
                   <Dashboard />
