@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import LoaderComp from "../components/partials/LoaderComp";
 import IsAuth from "../components/partials/IsAuth";
 import ProtectedRoute from "../components/partials/ProtectedRoute";
+import Redirect from "./Redirect";
 
 const Loadable = (Component: React.ComponentType) => (props: any) => {
   return (
@@ -24,20 +25,24 @@ const Loadable = (Component: React.ComponentType) => (props: any) => {
 const Router = () => {
   return useRoutes([
     {
-      path: "/users",
+      path: "/",
       element: <Layout />,
       children: [
         {
           element: <ProtectedLayout />,
           children: [
             {
-              // path: "",
+              // path: "users",
+              element: <Redirect />,
+              index: true,
+            },
+            {
+              path: "users",
               element: (
                 <ProtectedRoute>
                   <Dashboard />
                 </ProtectedRoute>
               ),
-              index: true,
             },
             {
               path: "users/:id",
