@@ -1,4 +1,4 @@
-type UserStatus = "inactive" | "pending" | "blacklisted" | "active";
+type UserStatus = "inactive" | "pending" | "blacklisted" | "active" | "";
 
 export interface Users {
   username: string;
@@ -8,3 +8,8 @@ export interface Users {
   date_joined: string;
   status: UserStatus;
 }
+
+// export interface TableFilter{
+//   organization: string
+//   userna
+// }

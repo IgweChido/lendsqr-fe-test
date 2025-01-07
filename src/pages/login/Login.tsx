@@ -2,6 +2,9 @@ import React from "react";
 import "./login.scss";
 import { Input } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/slices";
+import { AppDispatch } from "../../store/store";
 
 // images
 import pablo from "../../assets/images/login.svg";
@@ -9,9 +12,12 @@ import pablo from "../../assets/images/login.svg";
 // components
 import LogoComp from "../../components/logo/LogoComp";
 import ButtonComp from "../../components/button/ButtonComp";
+import { setDataSuccess } from "../../store/slices/authReducer";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const auth = useSelector((state: RootState) => state.auth.data);
   return (
     <div className="login">
       {/* left - image */}
@@ -51,6 +57,7 @@ const Login = () => {
             py="14px"
             color="white"
             handleClick={() => {
+              dispatch(setDataSuccess(true));
               navigate("/users");
             }}
           />

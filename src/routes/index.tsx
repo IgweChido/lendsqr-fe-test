@@ -5,6 +5,7 @@ import Layout from "../components/partials/Layout";
 import ProtectedLayout from "../components/partials/ProtectedLayout";
 import Login from "../pages/login/Login";
 import LoaderComp from "../components/partials/LoaderComp";
+import IsAuth from "../components/partials/IsAuth";
 
 const Loadable = (Component: React.ComponentType) => (props: any) => {
   return (
@@ -41,7 +42,11 @@ const Router = () => {
         },
         {
           path: "login",
-          element: <Login />,
+          element: (
+            <IsAuth>
+              <Login />
+            </IsAuth>
+          ),
         },
         {
           path: "*",

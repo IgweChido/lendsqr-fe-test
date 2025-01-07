@@ -20,6 +20,7 @@ import LoaderComp from "../../components/partials/LoaderComp";
 const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>();
   const users = useSelector((state: RootState) => state.users.data);
+  const auth = useSelector((state: RootState) => state.auth.data);
   const dashboard = useSelector((state: RootState) => state.dashboard.data);
   const loading_u = useSelector((state: RootState) => state.users.loading);
   const loading_d = useSelector((state: RootState) => state.dashboard.loading);
@@ -29,7 +30,7 @@ const Dashboard = () => {
     dispatch(fetchDashboardAnalytics());
   }, [dispatch]);
 
-  console.log("users", users);
+  console.log("auth", auth);
 
   return (
     <div>
