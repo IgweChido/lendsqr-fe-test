@@ -13,7 +13,7 @@ const IsAuth = ({ children }: Props) => {
 
   useEffect(() => {
     if (auth) {
-      navigate("/");
+      navigate("/users");
     }
 
     // Clean up the listener when the component unmounts

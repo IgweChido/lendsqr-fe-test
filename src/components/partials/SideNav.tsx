@@ -30,6 +30,7 @@ import reports from "../../assets/icons/reports.svg";
 
 import NavCategory from "./NavCategory";
 import NavComp from "./NavComp";
+import LogOutComp from "./LogOutComp";
 
 interface Props {
   display: boolean;
@@ -175,7 +176,14 @@ const SideNav = ({ display, setDisplay }: Props) => {
 
         {/* logout */}
         <div className="s__logout">
-          <NavComp label="Logout" link="logout" icon={logout} />
+          <div
+            className=""
+            onClick={() => {
+              console.log("logout");
+            }}
+          >
+            <LogOutComp label="Logout" icon={logout} />
+          </div>
 
           <p className="sl__p">v1.2.0</p>
         </div>

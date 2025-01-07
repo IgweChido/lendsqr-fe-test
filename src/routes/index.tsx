@@ -6,6 +6,7 @@ import ProtectedLayout from "../components/partials/ProtectedLayout";
 import Login from "../pages/login/Login";
 import LoaderComp from "../components/partials/LoaderComp";
 import IsAuth from "../components/partials/IsAuth";
+import ProtectedRoute from "../components/partials/ProtectedRoute";
 
 const Loadable = (Component: React.ComponentType) => (props: any) => {
   return (
@@ -31,12 +32,20 @@ const Router = () => {
           children: [
             {
               path: "users",
-              element: <Dashboard />,
+              element: (
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              ),
               index: true,
             },
             {
               path: "users/:id",
-              element: <UserDetails />,
+              element: (
+                <ProtectedRoute>
+                  <UserDetails />
+                </ProtectedRoute>
+              ),
             },
           ],
         },

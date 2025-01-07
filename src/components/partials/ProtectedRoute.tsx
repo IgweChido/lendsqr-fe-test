@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }: Props) => {
 
   useEffect(() => {
     if (auth) {
-      navigate("/");
+      navigate("/users");
     } else {
       navigate("/login");
     }

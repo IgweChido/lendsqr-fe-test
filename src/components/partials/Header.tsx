@@ -40,7 +40,7 @@ const Header = ({ setDisplay, display }: Props) => {
 
         {/* middle */}
         <div className="hc__middle">
-          <LogoComp />
+          <LogoComp small />
         </div>
         {/* right */}
         <SiteWrapper>

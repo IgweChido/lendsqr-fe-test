@@ -4,11 +4,17 @@ import "./logo.scss";
 import logo from "../../assets/logo/logo.svg";
 import logoTwo from "../../assets/logo/logo-icon.svg";
 
-const LogoComp = () => {
+interface Props {
+  small?: boolean;
+}
+const LogoComp = ({ small }: Props) => {
   return (
     <div className="logo">
-      <img src={logo} alt="" className="logo__big" />
-      <img src={logoTwo} alt="" className="logo__small" />
+      {!small ? (
+        <img src={logo} alt="" className="logo__big" />
+      ) : (
+        <img src={logoTwo} alt="" className="logo__small" />
+      )}
     </div>
   );
 };

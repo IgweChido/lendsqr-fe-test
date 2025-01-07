@@ -10,15 +10,15 @@
     object-fit: contain;
   }
 
-  .logo__big {
-    @media (max-width: 1024px) {
-      display: none;
-    }
-  }
+  // .logo__big {
+  //   @media (max-width: 1024px) {
+  //     display: none;
+  //   }
+  // }
 
-  .logo__small {
-    @media (min-width: 1023px) {
-      display: none;
-    }
-  }
+  // .logo__small {
+  //   @media (min-width: 1023px) {
+  //     display: none;
+  //   }
+  // }
 }
