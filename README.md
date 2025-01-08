@@ -19,7 +19,7 @@
 - **API Mocking**: Mocky.io
 - **State Management**: Redux Toolkit
 - **UI Library**: Ant Design
-- **Testing**:
+- **Testing**: Jest
 
 ## 2. Features
 
@@ -71,6 +71,8 @@ The major APIs called where:
 - Get User Details
 
 ## Testing
+
+In our testing strategy, we use Jest for unit tests to ensure our code behaves as expected without relying on real network requests. Instead of making actual HTTP requests, we mock the axios.get method to simulate the responses from API calls.
 
 ## Media Responsiveness
 
