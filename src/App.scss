@@ -135,6 +135,25 @@ span.ant-input-password-icon {
   background-color: $primary-color !important;
 }
 
+:where(.css-161f05s).ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button {
+  background-color: $primary-color !important;
+}
+
+.ant-input-search-button {
+  background-color: $primary-color !important;
+}
+
+:where(.css-161f05s).ant-input-search-large .ant-input-search-button {
+  background-color: $primary-color !important;
+}
+
+:where(.css-161f05s).ant-input-search .ant-input-search-button {
+  background-color: $primary-color !important;
+}
+
 :where(.css-dev-only-do-not-override-161f05s).ant-btn [class^="ant-btn"] {
   color: white !important;
 }
